@@ -1,0 +1,1 @@
+"use strict";function clickme1(){}function clickme6(){a=1,console.log(window.a);console.log(window.b)}

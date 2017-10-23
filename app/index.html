@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<title>ES6</title>
+	<style type="text/css">
+    </style>
+</head>
+
+<body>
+	<!-- let和var的区别 -->
+	<button onclick="clickme1()">点我1</button>
+	<input type="text" id="result1">
+	<button onclick="clickme2()">点我2</button>
+	<input type="text" id="result2">
+	<!-- let不存在变量提升 -->
+	<button onclick="clickme3()">不存在变量提升</button>
+	<!-- let暂时性死区 -->
+	<button onclick="clickme4()">暂时性死区</button>
+	<!-- 块级作用域 -->
+	<button onclick="clickme5()">块级作用域</button>
+
+	<!-- const -->
+	<button onclick="clickme1()">const基本用法</button>
+
+	<!-- 顶层对象(window对象) -->
+	<button onclick="clickme6()">顶层对象(window对象)</button>
+
+	<!-- 变量的解构赋值 -->
+	<button onclick="clickme7()">变量的结构赋值</button>
+
+	<!-- 对象的解构赋值 -->
+	<button onclick="clickme8()">对象的解构赋值</button>
+
+
+
+	
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<!-- let -->
+	<script src="js/es6.js"></script>
+	<!-- const -->
+	<script src="js/const.js"></script>
+	<!-- 变量的结构赋值 -->
+	<script type="text/javascript" src="js/destructuring.js"></script>
+	<!-- 字符串的扩展 -->
+	<script type="text/javascript" src="js/stringEx.js"></script>
+</body>
+</html>

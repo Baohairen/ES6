@@ -1,0 +1,1 @@
+"use strict";function clickme1(){for(var c=[],n=0;n<10;n++)c[n]=function(){$("#result1").val(n)},c[0]();c[6]()}function clickme2(){for(c=0;c<3;c++){var c="abc";console.log(c)}}function clickme3(){}function clickme4(){}function clickme5(){}
