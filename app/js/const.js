@@ -1,5 +1,5 @@
 // 'use strict'
-function clickme1(){
+function clickme1_1(){
 	//1、const声明一个只读的常量。一旦声明，常量的值就不能改变
 		// const PI = 3.1415;
 		// console.log(PI);

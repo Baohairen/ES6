@@ -1,1 +1,1 @@
-"use strict";function clickme1(){}function clickme6(){a=1,console.log(window.a);console.log(window.b)}
+"use strict";function clickme1_1(){}function clickme6(){a=1,console.log(window.a);console.log(window.b)}

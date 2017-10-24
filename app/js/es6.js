@@ -1,13 +1,14 @@
 function clickme1(){
 		// ES5
 		var a = [];
-		for(var i = 0;i<10;i++){
+		// for(var i = 0;i<10;i++){
+		for(let i = 0;i<10;i++){	 //var定义的变量溢出，循环使用，let变量只在其作用域内生效
 			a[i]=function(){
 				$('#result1').val(i);
 			}
 			a[0]();
 		}
-		a[6]();
+		a[6]();        //10(var)   6(let) 
 		// 闭包
 		// var n = 999;
 		// function f2(){
@@ -35,10 +36,10 @@ function clickme2(){
 }
 // 不存在变量提升
 function clickme3(){
-	// console.log(foo);//undefined
-	// var foo = 2;
-	// console.log(bar);//Uncaught ReferenceError: bar is not defined
-	// let bar = 3;
+	console.log(foo);//undefined
+	var foo = 2;
+	console.log(bar);//Uncaught ReferenceError: bar is not defined
+	let bar = 3;
 }
 // 暂时性死区
 function clickme4(){
@@ -46,18 +47,18 @@ function clickme4(){
 	// var tmp = 123;
 	// if (true) {
 	// 	tmp = 'abc',
-	// 	let tmp;//Uncaught SyntaxError: Unexpected identifier
+	// 	let tmp;//Uncaught SyntaxError: Unexpected identifier(编译报错)
 	// }
 	// 代码块中，let声明的变量在let声明之前使用，无论什么操作，都会报错
-	// if (true) {
-		//TDZ开始
+	if (true) {
+		// TDZ开始
 		// tmp = 'abc'; // ReferenceError
 		// console.log(tmp); // ReferenceError
 		// let tmp;//TDZ结束
 		// console.log(tmp);// undefined
 		// tmp = 122;
 		// console.log(tmp);//122
-	// }
+	}
 
 	// typeof x; // ReferenceError
 	// let x;
@@ -131,7 +132,7 @@ function clickme5(){
 
 		// do表达式
 			// 1、本质上，块级作用域是一个语句，将多个操作封装在一起，有返回值
-				// {没
+				// {
 				// 	let t;
 				// 	t = t*t+1;
 				// }
@@ -139,7 +140,7 @@ function clickme5(){
 			// 2、在块级作用域之前加上do，使它变为do表达式，使得块级作用域可以返回值
 				// let x = do{
 				// 	let t = 1;
-				// 	// t*t+1;
+				// 	t*t+1;
 				// }
 				// console.log(x);
 }
