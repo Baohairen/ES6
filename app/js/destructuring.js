@@ -8,7 +8,12 @@ function clickme7(){
 	// console.log(a,b,d);
 	// 如果等号的右边不是数组（或者严格地说，不是可遍历的结构，参见《Iterator》一章），那么将会报错。
 	// let [foo] = 1;//报错
-	// function fibs(){
+
+	// let [x, y, ...z] = ['a'];
+	// console.log(z);  //  结果为[]
+
+	//???
+	// function* fibs(){
 	// 	let a = 0;
 	// 	let b = 1;
 	// 	white(true){
@@ -17,7 +22,9 @@ function clickme7(){
 	// 	}
 	// }
 	// let[first,second,third,fourth,fifth,sixth] = fibs();
+	// sixth
 	// console.log(sixth);
+	//???
 }
 // 对象的解构赋值
 function clickme8(){
@@ -35,7 +42,7 @@ function clickme8(){
 	let obj = {p : ['hello',{y : 'world'}]};
 	// let{p : [x,{y}]} = obj;
 	let {p,p:[x,{y}]} = obj;
-	console.log(x,y,p);
+	console.log(p);
  }
 // 闭包
 // function f1(){
