@@ -15,15 +15,15 @@
   // 4、预定义模式--\S是预定义模式，匹配所有不是空格的字符
     // console.log(/^\S$/.test('𠮷')); // false
     // console.log(/^\S$/u.test('𠮷')); // true
-    // function codePointLength(text) {
-    //   var result = text.match(/[\s\S]/gu);
-    //   return result ? result.length : 0;
-    // }
-    // function clickme9(){
-    //   var s = '𠮷𠮷';
-    //   console.log('"'+s+'"字符串通过原生的方法返回的长度为：'+s.length); // 4
-    //   console.log('"'+s+'"字符串通过识别Unicode码的方法返回正确的长度为：'+codePointLength(s)); // 2
-    // }
+    function codePointLength(text) {
+      var result = text.match(/[\s\S]/gu);
+      return result ? result.length : 0;
+    }
+    function clickme9(){
+      var s = '𠮷𠮷';
+      console.log('"'+s+'"字符串通过原生的方法返回的长度为：'+s.length); // 4
+      console.log('"'+s+'"字符串通过识别Unicode码的方法返回正确的长度为：'+codePointLength(s)); // 2
+    }
 // y修饰符，粘连”（sticky）修饰符，全局匹配，后一次匹配都从上一次匹配成功的下一个位置开始，
 //         g修饰符只要剩余位置中存在匹配就可，而y修饰符确保匹配必须从剩余的第一个位置开始
   // var s = 'aaa_aa_a';

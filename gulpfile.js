@@ -15,7 +15,7 @@ gulp.task('convertJS', function(){
       presets: ['es2015']
     }))
     .pipe(uglify())
-    .pipe(gulp.dest('dist/js'))
+    .pipe(gulp.dest('app/dist/js'))
 })
 
 // 合并并压缩css
@@ -26,7 +26,7 @@ gulp.task('convertCSS', function(){
     .pipe(rename(function(path){
       path.basename += '.min';
     }))
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('app/dist/css'));
 })
 
 // 监视文件变化，自动执行任务
@@ -38,12 +38,12 @@ gulp.task('watch', function(){
 // browserify
 gulp.task("browserify", function () {
     var b = browserify({
-        entries: "dist/js/app.js"
+        entries: "app/dist/js/app.js"
     });
 
     return b.bundle()
         .pipe(source("bundle.js"))
-        .pipe(gulp.dest("dist/js"));
+        .pipe(gulp.dest("app/dist/js"));
 });
 
 gulp.task('connect', ['convertJS', 'convertCSS', 'browserify', 'watch'],function(){
@@ -53,4 +53,7 @@ gulp.task('connect', ['convertJS', 'convertCSS', 'browserify', 'watch'],function
         port: '8083'
     })
 });
+
 // 通过watch，可以在保存代码之后，让gulp自动将代码构建一遍，而不用自己在重新敲一遍
+
+gulp.task('default', ['connect'])
