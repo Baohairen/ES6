@@ -1,4 +1,43 @@
-// Number.EPSILON的实质是一个可以接受的最小误差范围。
+//1、 Number()--将0b(二进制)和0o前缀(八进制)的字符串数值转为十进制
+  // 非严格模式
+    // (function(){
+    //   // console.log(0o11 === 011);//true
+    // })()
+  // 严格模式
+    // (function(){
+    //   'use strict';
+    //   // console.log(0o11 === 011);//error
+    // })()
+// 2、Number.isFinite()--用来检查一个数值是否为有限的, Number.isNaN()--用来检查一个值是否为NaN
+    // console.log(Number.isFinite(15));//true
+    // console.log(Number.isFinite('15'));//false
+    // console.log(Number.isFinite(true));//false
+    // console.log(Number.isFinite(NaN));//false
+    // console.log(Number.isFinite(-Infinity));//false
+
+    // console.log(Number.isNaN(NaN))  // true
+    // console.log(Number.isNaN(15)) // false
+    // console.log(Number.isNaN('15')) // false
+    // console.log(Number.isNaN(true)) // false
+    // console.log(Number.isNaN(9/NaN)) // true
+    // console.log(Number.isNaN('true'/0)) // true
+    // console.log( Number.isNaN('true'/'true')) // true
+// 3、Number.parseInt(), Number.parseFloat()
+  // ES5的写法
+  // console.log(parseInt('12.34')) // 12
+  // console.log(parseFloat('123.45#')) // 123.45
+
+  // ES6的写法
+  // console.log(Number.parseInt('12.34')) // 12
+  // console.log(Number.parseFloat('123.45#')) // 123.45
+// 4、Number.isInteger()--用来判断一个值是否为整数
+  // Number.isInteger(25) // true
+  // Number.isInteger(25.0) // true
+  // Number.isInteger(25.1) // false
+  // Number.isInteger("15") // false
+  // Number.isInteger(true) // false
+// 5、Number.EPSILON的实质是一个可以接受的最小误差范围。Number.EPSILON === Math.pow(2, -52)
+console.log(0.1+0.2 == 0.3); //false
 function withinErrorMargin (left, right) {
   return Math.abs(left - right) < Number.EPSILON * Math.pow(2, 2);
 }
@@ -8,6 +47,7 @@ function checkError(){
   console.log(1.1 + 1.3 === 2.4) // false
   console.log(withinErrorMargin(1.1 + 1.3, 2.4)) // true
 }
+// 6、安全整数和Number.isSafeInteger()--用来判断一个整数是否在这个范围之内
 // 下面的函数可以同时验证两个运算数和运算结果。
 function trusty (left, right, result) {
   if (
@@ -19,6 +59,7 @@ function trusty (left, right, result) {
   }
   throw new RangeError('Operation cannot be trusted!');
 }
+// ES6引入了Number.MAX_SAFE_INTEGER和Number.MIN_SAFE_INTEGER这两个常量，用来表示这个范围的上下限
 function checkInteger(){
   console.log(trusty(1, 2, 3));    // 3
   console.log(9007199254740993 === Number.MAX_SAFE_INTEGER);   //false
@@ -75,3 +116,5 @@ function math(){
   console.log(Math.hypot(3, 4, '5'));   // 7.0710678118654755
   console.log(Math.hypot(-3));          // 3
 }
+// 9、指数运算符
+// console.log(2**2);// 4
