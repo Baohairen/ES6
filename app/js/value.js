@@ -83,6 +83,10 @@ function math(){
   console.log(Math.sign('foo'))  // NaN
   console.log(Math.sign())  // NaN
   console.log(Math.sign(undefined))  // NaN
+  /*暂不支持
+  console.log(Math.signbit(0)) //false
+  console.log(Math.signbit(-0)) //true
+  console.log(Math.signbit(+0)) //true*/
   // 3.Math.cbrt方法用于计算一个数的立方根。
   console.log('*************Math.cbrt方法****************');
   console.log(Math.cbrt('8')) // 2
@@ -115,6 +119,23 @@ function math(){
   console.log(Math.hypot(3, 4, 'foo')); // NaN
   console.log(Math.hypot(3, 4, '5'));   // 7.0710678118654755
   console.log(Math.hypot(-3));          // 3
+  // 7.对数方法
+  console.log('*************Math.对数方法****************');
+  console.log(Math.log1p(1));            // 0.6931471805599453
+  console.log(Math.log1p('1.718'));            // 0.6931471805599453
+  console.log('Math.expm1(2) = e^2-1 = '+Math.expm1(2));       //e^x-1 = Math.expm1(x)  
+  console.log('Math.log1p(2) = loge(1+2)= '+Math.log1p(2));       //loge(1+x)= Math.log1p(x)  
+  console.log('Math.log10(10) = log10(10)= '+Math.log10(10));       //log10(x)= Math.log10(x) 
+  console.log('Math.log2(2) = log2(2)= '+Math.log2(2));       //log2(x)= Math.log2(x)  
+  // Math.sinh(x) 返回x的双曲正弦（hyperbolic sine）
+  // Math.cosh(x) 返回x的双曲余弦（hyperbolic cosine）
+  // Math.tanh(x) 返回x的双曲正切（hyperbolic tangent）
+  // Math.asinh(x) 返回x的反双曲正弦（inverse hyperbolic sine）
+  // Math.acosh(x) 返回x的反双曲余弦（inverse hyperbolic cosine）
+  // Math.atanh(x) 返回x的反双曲正切（inverse hyperbolic tangent）
+  /*暂不支持
+  let a = 2 ** 2;
+  console.log(a);        //a ** 3 =a*a*a*/
 }
 // 9、指数运算符
 // console.log(2**2);// 4
