@@ -44,11 +44,11 @@
 // flags属性--返回正则表达式的修饰符
   // ES5 的 source 属性
   // 返回正则表达式的正文
-  console.log(/abc/ig.source);
+  // console.log(/abc/ig.source);
   // "abc"
 
   // ES6 的 flags 属性
   // 返回正则表达式的修饰符
-  console.log(/abc/ig.flags)
+  // console.log(/abc/ig.flags)
   // 'gi'
 // s修饰符：dotAll模式
