@@ -68,7 +68,7 @@
     // console.log(ar1);//-4
     [1, 5, 10, 15].findIndex(function(value, index, arr) {
         return value > 9;
-    }) // 2
+    }); // 2
 // 6、数组实例的fill()--使用给定值，填充一个数组
     ['a','b','c'].fill(7);//[7,7,7]
     // fill方法还可以接受第二个和第三个参数，用于指定填充的起始位置和结束位置。
@@ -81,20 +81,20 @@
     // 0
     // 1
     
-    for (let elem of ['a', 'b'].values()) {
+    // for (let elem of ['a', 'b'].values()) {
         // console.log(elem);
-    }
+    // }
     // 'a'
     // 'b'
     
     for (let [index, elem] of ['a', 'b'].entries()) {
         // console.log(index, elem);
-    }
+    };
     // 0 "a"
     // 1 "b"
 // 8、数组实例的 includes()-返回一个布尔值，表示某个数组是否包含给定的值，与字符串的includes方法类似
-    [1, 2, 3].includes(2)     // true
-    [1, 2, 3].includes(4)     // false
+    [1, 2, 3].includes(2);     // true
+    [1, 2, 3].includes(4);     // false
     // 该方法的第二个参数表示搜索的起始位置，默认为0
     [1, 2, 3].includes(3, 3);  // false
 // 9、数组的空位
