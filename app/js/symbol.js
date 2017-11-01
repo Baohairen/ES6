@@ -1,0 +1,4 @@
+// Symbol
+function symbol () {
+
+}
